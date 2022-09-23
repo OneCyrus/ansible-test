@@ -1,5 +1,3 @@
-OS Version
----
 - hosts: localhost
   gather_facts: yes
   become: false
