@@ -1,0 +1,13 @@
+- name: Launch a workflow with a timeout of 20 seconds
+  workflow_launch:
+    workflow_template: "Test Workflow"
+    wait: False
+  register: workflow
+
+- name: Wait for approval node to activate and approve
+  workflow_approval:
+    workflow_job_id: "{{ workflow.id }}"
+    name: Approve Me
+    interval: 10
+    timeout: 20
+    action: deny
