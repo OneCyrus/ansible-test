@@ -12,3 +12,5 @@
     shell: Get-Process
     args:
       executable: /usr/bin/pwsh
+  - name: Run Terraform
+    shell: terraform -version
