@@ -1,0 +1,17 @@
+name: Build EE image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install ansible builder
+        run: pip install ansible-builder==3.0.0.0b1
+      - name: build image
+        run: ansible-builder build --tag awx-pwsh-ee:0.0.1 --container-runtime docker -f execution-environment.yml
+        working-directory: execenv
