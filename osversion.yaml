@@ -11,4 +11,4 @@
   - name: Run a pwsh
     shell: Get-Process
     args:
-      executable: /bin/pwsh
+      executable: /usr/bin/pwsh
